@@ -1,86 +1,4 @@
-# import requests
-# import os
-# from tkinter import *
-#
-# # APP_ID = os.environ.get("app_id")
-# # API_KEY = os.environ.get("api_key")
-# # BEARER_TOKEN=os.environ.get("bearer_token")
-#
-# APP_ID = "5c663869"
-# API_KEY ="9a68c02a386d3641f296ee1b2d073aed"
-# # BEARER_TOKEN
-# def track(inp):
-#
-#
-#     url = "https://trackapi.nutritionix.com/v2/natural/exercise"
-#     parameters={
-#         "query":inp,
-#         "weight_kg":62,
-#         "height_cm":172,
-#         "age":18
-#     }
-#     headers={"x-app-id":APP_ID,"x-app-key":API_KEY}
-#
-#     response=requests.post(url=url,json=parameters,headers=headers)
-#     data=response.json()
-#     print(data)
-#     exercise_data=data['exercises']
-#
-#     # Step 2: Adding details to your google sheets
-#
-#     from datetime import datetime
-#
-#     today=datetime.now()
-#
-#
-#     sheet_url="https://api.sheety.co/39de4e2da8695938464d35c3b6cfe976/workouts/workouts"
-#     sheet_headers = {"Authorization": f"Bearer a6fgeigfiqh98"}
-#
-#     for i in exercise_data:
-#         print(i["duration_min"])
-#         sheet_params={
-#             "workout":{
-#             "date":today.strftime("%d/%m/%Y"),
-#             "time":today.strftime("%H:%M:%S"),
-#             "exercise":i["name"],
-#             "duration":i["duration_min"],
-#             "calories":i["nf_calories"]
-#         }
-#         }
-#         response2=requests.post(url=sheet_url,json=sheet_params,headers=sheet_headers)
-#         print(response2.text)
-#
-#
-#
-#
-#
-# window=Tk()
-# window.title('Workout Tracker')
-# window.config(padx=50,pady=50,bg="yellow")
-# inp=None
-#
-# def submit():
-#     inp=entry.get()
-#
-#     entry.delete(0,END)
-#     track(inp)
-#
-# label=Label(text="What did you workout today:",highlightthickness=0,background="yellow",padx=10,pady=10)
-# label.grid(column=1,row=1)
-#
-# entry=Entry(width=35)
-# entry.grid(column=1,row=2)
-#
-#
-# button=Button(text="Submit",command=submit,highlightthickness=0)
-# button.grid(column=1,row=4)
-#
-# canvas=Canvas(width=448,height=200)
-# image=PhotoImage(file="gym.png")
-# canvas.create_image(224,100,image=image)
-# canvas.grid(column=1,row=0)
-#
-# window.mainloop()
+
 
 
 import requests
@@ -182,6 +100,7 @@ canvas.create_image(224, 100, image=image)
 canvas.grid(column=1, row=0)
 
 window.mainloop()
+
 
 
 
